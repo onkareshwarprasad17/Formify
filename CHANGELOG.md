@@ -1,5 +1,12 @@
 
 
+## [1.0.2](https://github.com/onkareshwarprasad17/Formify/compare/1.0.1...1.0.2) (2024-06-19)
+
+
+### Bug Fixes
+
+* fixed the typo in preview workflow file ([5c00438](https://github.com/onkareshwarprasad17/Formify/commit/5c00438068a040aa457e0cc69ed8f4d9327a43ce))
+
 ## 1.0.1 (2024-06-19)
 
 
