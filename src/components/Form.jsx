@@ -217,7 +217,7 @@ const Form = ({ editMode, username }) => {
         />
       </div>
 
-      <button type="submit">{editMode ? "Update" : "Submit"}</button>
+      <button type="submit">{editMode ? "Update" : "Submit Form"}</button>
     </form>
   );
 };
