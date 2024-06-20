@@ -130,7 +130,9 @@ const Form = ({ editMode, username }) => {
   return (
     <form onSubmit={submitHandler}>
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">
+          {process.env.test_environment} Username
+        </label>
         <div>
           <input
             type="text"
@@ -217,7 +219,7 @@ const Form = ({ editMode, username }) => {
         />
       </div>
 
-      <button type="submit">{editMode ? "Update" : "Submit"}</button>
+      <button type="submit">{editMode ? "Update" : "Submit Form"}</button>
     </form>
   );
 };

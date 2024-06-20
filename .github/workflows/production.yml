@@ -24,6 +24,23 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
+      - name: Check for Existing Tags
+        id: check-tags
+        run: |
+          if [ -z "$(git tag -l)" ]; then
+            echo "no_tags=true" >> $GITHUB_ENV
+          else
+            echo "no_tags=false" >> $GITHUB_ENV
+          fi
+
+      - name: Generate Release Tag
+        run: |
+          if [ "${{ env.no_tags }}" = "true" ]; then
+            npm run release -- --first-release
+          else
+            npm run release
+          fi
+
       - name: Generate Release Tag
         run: npm run release
 
