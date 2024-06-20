@@ -1,8 +1,8 @@
 name: Vercel Production Deployment
 
 env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID}}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID}}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
   push:
@@ -40,6 +40,15 @@ jobs:
           else
             npm run release
           fi
+
+      - name: Commit Release Changes
+        if: success()
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add CHANGELOG.md package.json
+          git commit -m "chore: commit changes from release-it"
+          git push origin main
 
       - name: Deploy Project Artifacts
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
