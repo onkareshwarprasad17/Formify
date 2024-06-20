@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --env NODE_ENV=development",
     "checkProduction": "webpack-dev-server --mode production --env NODE_ENV=production",
-    "build": "webpack --mode production --env NODE_ENV=development",
+    "build": "webpack --mode production --env NODE_ENV=production",
     "test": "jest",
     "coverage": "jest --coverage --collectCoverageFrom='src/**/*.jsx'",
     "release": "release-it"
