@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "checkProduction": "webpack-dev-server --mode production",
-    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --env NODE_ENV=development",
+    "checkProduction": "webpack-dev-server --mode production --env NODE_ENV=production",
+    "build": "webpack --mode production --env NODE_ENV=development",
     "test": "jest",
     "coverage": "jest --coverage --collectCoverageFrom='src/**/*.jsx'",
     "release": "release-it"
