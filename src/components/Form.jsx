@@ -130,9 +130,7 @@ const Form = ({ editMode, username }) => {
   return (
     <form onSubmit={submitHandler}>
       <div>
-        <label htmlFor="username">
-          {process.env.test_environment} Username
-        </label>
+        <label htmlFor="username">{process.env.TEST} Username</label>
         <div>
           <input
             type="text"
