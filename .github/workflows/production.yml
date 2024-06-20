@@ -41,8 +41,5 @@ jobs:
             npm run release
           fi
 
-      - name: Generate Release Tag
-        run: npm run release
-
       - name: Deploy Project Artifacts
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
